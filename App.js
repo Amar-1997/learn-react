@@ -1,4 +1,4 @@
-// // hello world in react 
+// // hello world in react  
 
 // //creating the element
 // const heading = React.createElement('h1',{id : "heading", type:"h1"},"Hello World from React!");

@@ -1,4 +1,4 @@
-# What is NPM ?
+# What is NPM ? 
 
 Basically npm is not an abberiviation of something. Its main task is to manage all the pacakages.
 These packages also known as dependencies.
