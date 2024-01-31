@@ -11,7 +11,7 @@
 
 
 // create nesting structure using core react without JSX
-const parent = React.createElement('div',
+const parent = React.createElement('div', 
  { id: 'parent' },
  [
     React.createElement('div', { id: 'child1'},
