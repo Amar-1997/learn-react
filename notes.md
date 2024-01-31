@@ -1,3 +1,5 @@
+# Episode 2 : ignite your app
+
 # What is NPM ? 
 
 Basically npm is not an abberiviation of something. Its main task is to manage all the pacakages.
