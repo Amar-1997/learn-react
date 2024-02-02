@@ -20,6 +20,8 @@ local machine, so that anything will not break due to the mismatch versions.
 node_modules is the collection of dependencies.
 When we install dependencies , it basically fetch all the dependencies code to our system in the form of node_modules. It is kind of like database where all the packages exists.
 
+- If you have package.json and package-lock.json file you can re-generate node_modules.
+
 # What is transitive dependencies ?
 
 When a dependencies has its own other dependencies and those other dependencies have their own dependencies and so on , it is called transitive dependencies.
@@ -65,3 +67,48 @@ Example ^2.8.4
 
 tilda (~) is use for major upgrades, When there will be major upgrades in parcel it will automatically updates its version.
 Example ~3.0.0
+
+
+# npx
+
+Genrally it is node package executer. It is use to execute a package.
+npx parcel [source]
+npx parcel index.html
+
+
+- CDN links are not good way to bring react in your project. It will make network calls again and again.
+- Good way is install react as package.
+
+
+# What is parcel
+
+Parcel is a bundler that helps to ignite our app.
+It is doing alot of things.
+
+- Creates a Dev Build.
+- Creates Local Server.
+- Automatically refreshing page (HMR). HMR = Hot Module Replacements.
+- It uses File Watching Algorithm (Written in C++).
+- Parcel is giving faster experience, because it is using caching. It is caching everything whatever we do.
+- Perform image optimization.
+- Minification of files.
+- Bundeling the files.
+- Compression of files.
+- Consistent Hashing.
+- Code splitting.
+- Differential Bundeling -- Gives the support of older browsers.
+- Better Error Handling.
+- Provide support of HTTPS.
+- Tree Shaking -- Remove unused code.
+- Different dev and production Builds.
+
+Remove   "main": "App.js", from package.json because our main entry point is index.html(according to parcel).
+
+
+# What is dist ?
+
+When you execute parcel using npx parcel index.html , it generates a development build (final bundeled code) of your project in dist and hosted it to localhost:1234.
+Basically developemt build is put inside the dist folder.
+
+
+
