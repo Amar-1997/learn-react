@@ -101,6 +101,7 @@ It is doing alot of things.
 - Provide support of HTTPS.
 - Tree Shaking -- Remove unused code.
 - Different dev and production Builds.
+- transpilation of JSX (Through babel package)
 
 Remove   "main": "App.js", from package.json because our main entry point is index.html(according to parcel).
 
@@ -111,4 +112,95 @@ When you execute parcel using npx parcel index.html , it generates a development
 Basically developemt build is put inside the dist folder.
 
 
+# Episode 03 - foundation
 
+# How to start project ?
+
+- The default way is to write the command in terminal --> npx parcel index.html  or npx parcel build index.html
+- Another way is : Go to package.json and under scripts , create your own script to start the porject.
+- now start the project with that script --> (npm run start or npn start) or (npm run build)
+- start and build are the scripts that you have created under scripts.
+- go to the package.json and check for more clarity.
+
+# What is JSX ?
+
+- JSX is not an HTML elements.
+- Js engine or browser do not understand the JSX directly, because it is not valid JS code.
+- Parcel (Bundler) WIth the help of Babel(Js Compiler) transpiled the JSX code to the format that JS engine or browser can understand , this is how JSX works.
+- Attributes will be given in camelCase in JSX. <h1 className="name" tabIndex="1">Content</h1>.
+- it sanitize the data coming from api, and prevents the attacks. <div>{data}</div>
+
+
+
+# What is Reat Components ?
+
+React components are reusable building blocks in the React library, encapsulating UI and behavior for modular and maintainable development.
+
+- CLass Based component. --> Old method
+- Functional Component. --> New method
+
+**Functional Components**
+- Function that returns a JSX code or a react element is known as functional component.
+- It starts from capital word.
+- Component can be called like: <Title /> Or <Title></Title>.
+- Components can be render like this : root.render(<Title/>) Or root.render(<Title></Title>);
+
+
+# What is Component Composition ?
+
+using a component inside another component is called component composition. Composing two components in each other.
+Example:
+
+const Title = () => (<h1>Here is the Title</h1>);
+
+const Heading = () => {
+    return (
+        <h1>This is functional Component</h1>
+    )
+}
+
+// Component Composition 
+const Container = () => (
+    <div id="container">
+        <Title />
+        <Heading />
+    </div>
+);
+
+
+# Config Driven UI ?
+
+The website when driven by data is known as config driven UI.
+
+Lets take an example of swiggy, In different states there can be different offers of different Restrunts . So in each state UI of swiggy will change according to their provided data. There might be offer cards or No offer cards on the same UI but in different states. 
+
+
+# React Hooks ?
+
+- They are normal JS utility functions.
+- The pre-built utility Functions written in react.
+- Two important hooks are:
+
+   **useState()** 
+   - superpowerful state variables in react.
+   - it keeps the UI layer and Data layer sync with each other and updates UI.
+   - Whenever a state variable updates , React will re-render the component.
+
+
+   **useEffect()** - 
+
+
+# React Reconciliation (React fiber) Algorithm ?
+
+- introduced in React 16.
+- React fiber is a new way of find the difference and updating the new DOM. It is based on the concept of Virtual DOM.
+- The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+- Link https://github.com/acdlite/react-fiber-architecture
+
+- **Virtual DOM** -
+  - It is representation of Actual DOM.
+  - It keep tracks of HTML elements as an Object.
+  - It creates copy of actual DOM and after event triggers it check the difference between them.
+    For Example - You have container of 7 cards and when click on a button it is now filters to 2 cards , So behind this process it creates the two versions of the container components , one is old and other is new, and It compares the difference between these two Objects(components) and update the new one to the actual DOM. This process is also known as **Diff Algorithm**.
+
+  
